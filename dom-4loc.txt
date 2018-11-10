@@ -1,0 +1,66 @@
+(define (domain dom)
+	(:requirements :strips)
+	(:predicates 
+		(package ?p)
+		(location ?l)
+		(connected ?l1 ?l2)
+		(truck ?t)
+		(inInnerSlot ?p ?t)
+		(inMiddleSlot ?p ?t)
+		(inOutterSlot ?p ?t)
+		(atLocation ?tp ?l)
+		(fullInnerSlot ?t)
+		(fullMiddleSlot ?t)
+		(fullOutterSlot ?t)
+		(traffic ?l1 ?l2)
+		(movingTruck ?t ?l1 ?l2)
+	)
+
+	(:action load_truck_innerSlot
+		:parameters (?p ?t ?l)
+		:precondition (and (package ?p) (location ?l) (truck ?t) (atLocation ?p ?l) (atLocation ?t ?l) (not (fullInnerSlot ?t)) (not (fullMiddleSlot ?t)) (not (fullOutterSlot ?t)))
+		:effect (and (not (atLocation ?p ?l)) (inInnerSlot ?p ?t) (fullInnerSlot ?t))
+	)
+
+	(:action load_truck_middleSlot
+		:parameters (?p ?t ?l)
+		:precondition (and (package ?p) (location ?l) (truck ?t) (atLocation ?p ?l) (atLocation ?t ?l) (fullInnerSlot ?t) (not (fullMiddleSlot ?t)) (not (fullOutterSlot ?t)))
+		:effect (and (not (atLocation ?p ?l)) (inMiddleSlot ?p ?t) (fullMiddleSlot ?t))
+	)
+
+	(:action load_truck_outterSlot
+		:parameters (?p ?t ?l)
+		:precondition (and (package ?p) (location ?l) (truck ?t) (atLocation ?p ?l) (atLocation ?t ?l) (fullInnerSlot ?t) (fullMiddleSlot ?t) (not (fullOutterSlot ?t)))
+		:effect (and (not (atLocation ?p ?l)) (inOutterSlot ?p ?t) (fullOutterSlot ?t))
+	)
+
+	(:action move_truck
+		:parameters (?t ?l1 ?l2)
+		:precondition (and (truck ?t) (location ?l1) (location ?l2) (connected ?l1 ?l2) (not (traffic ?l1 ?l2)) (atLocation ?t ?l1))
+		:effect (and (not (atLocation ?t ?l1)) (movingTruck ?t ?l1 ?l2) (traffic ?l1 ?l2)) 
+	)
+
+	(:action arrived_at_location
+		:parameters (?t ?l1 ?l2)
+		:precondition (and (truck ?t) (location ?l1) (location ?l2) (connected ?l1 ?l2) (traffic ?l1 ?l2) (movingTruck ?t ?l1 ?l2))
+		:effect (and (atLocation ?t ?l2) (not (traffic ?l1 ?l2)) (not (movingTruck ?t ?l1 ?l2))) 
+	)
+
+	(:action unload_truck_innerSlot
+		:parameters (?p ?t ?l)
+		:precondition (and (package ?p) (location ?l) (truck ?t) (inInnerSlot ?p ?t) (atLocation ?t ?l) (fullInnerSlot ?t) (not (fullMiddleSlot ?t)) (not (fullOutterSlot ?t)))
+		:effect (and (atLocation ?p ?l) (not (inInnerSlot ?p ?t)) (not (fullInnerSlot ?t)))
+	)
+
+	(:action unload_truck_middleSlot
+		:parameters (?p ?t ?l)
+		:precondition (and (package ?p) (location ?l) (truck ?t) (inMiddleSlot ?p ?t) (atLocation ?t ?l) (fullMiddleSlot ?t) (not (fullOutterSlot ?t)))
+		:effect (and (atLocation ?p ?l) (not (inMiddleSlot ?p ?t)) (not (fullMiddleSlot ?t)))
+	)	
+
+	(:action unload_truck_outterSlot
+		:parameters (?p ?t ?l)
+		:precondition (and (package ?p) (location ?l) (truck ?t) (inOutterSlot ?p ?t) (atLocation ?t ?l) (fullOutterSlot ?t))
+		:effect (and (atLocation ?p ?l) (not (inOutterSlot ?p ?t)) (not (fullOutterSlot ?t)))
+	)
+)
