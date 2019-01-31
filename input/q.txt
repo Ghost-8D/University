@@ -1,0 +1,13 @@
+perf stat -e dTLB-load-misses ./QuickSort_std.out 65536 &> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 131072 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 262144 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 524288 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 1048576 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 2097152 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 4194304 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 8388608 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 16777216 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 33554432 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 67108864 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 134217728 &>> perfOutput17.txt
+perf stat -e dTLB-load-misses ./QuickSort_std.out 268435456 &>> perfOutput17.txt

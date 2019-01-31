@@ -1,0 +1,13 @@
+perf stat -e iTLB-loads ./QuickSort_std.out 65536 &> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 131072 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 262144 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 524288 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 1048576 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 2097152 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 4194304 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 8388608 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 16777216 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 33554432 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 67108864 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 134217728 &>> perfOutput20.txt
+perf stat -e iTLB-loads ./QuickSort_std.out 268435456 &>> perfOutput20.txt

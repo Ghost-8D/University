@@ -1,0 +1,13 @@
+perf stat -e L1-dcache-loads ./QuickSort_std.out 65536 &> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 131072 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 262144 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 524288 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 1048576 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 2097152 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 4194304 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 8388608 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 16777216 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 33554432 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 67108864 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 134217728 &>> perfOutput8.txt
+perf stat -e L1-dcache-loads ./QuickSort_std.out 268435456 &>> perfOutput8.txt

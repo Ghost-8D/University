@@ -1,0 +1,13 @@
+perf stat -e branch-instructions ./QuickSort_std.out 65536 &> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 131072 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 262144 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 524288 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 1048576 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 2097152 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 4194304 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 8388608 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 16777216 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 33554432 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 67108864 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 134217728 &>> perfOutput6.txt
+perf stat -e branch-instructions ./QuickSort_std.out 268435456 &>> perfOutput6.txt

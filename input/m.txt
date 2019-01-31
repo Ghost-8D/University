@@ -1,0 +1,13 @@
+perf stat -e LLC-load-misses ./QuickSort_std.out 65536 &> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 131072 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 262144 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 524288 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 1048576 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 2097152 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 4194304 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 8388608 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 16777216 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 33554432 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 67108864 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 134217728 &>> perfOutput13.txt
+perf stat -e LLC-load-misses ./QuickSort_std.out 268435456 &>> perfOutput13.txt
